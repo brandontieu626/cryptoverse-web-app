@@ -7,13 +7,14 @@ import Loader from './Loader';
 const {Text, Title} = Typography;
 const { Option } = Select;
 const demoImage = 'https://image.cnbcfm.com/api/v1/image/106928219-1629130755312-gettyimages-1234311531-sindeyev-notitle210729_np12K.jpeg?v=1649925814&w=740&h=416';
+
 const News = ({simplified}) => {
   const [newsCategory,setNewsCategory] = useState('Cryptocurrency')
   const {data} = useGetCryptosQuery(100);
   const {data: cryptoNews} = useGetCryptoNewsQuery({newsCategory,count:simplified? 6: 50})
 
   if(!cryptoNews?.value) return <Loader/>;
-  console.log(cryptoNews)
+
   return (
     <Row gutter={[24,24]}>
       {!simplified && (

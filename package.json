@@ -2,7 +2,7 @@
   "name": "cryptoverse",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
+  "dependencinp": {
     "@ant-design/icons": "^4.6.4",
     "@reduxjs/toolkit": "^1.6.1",
     "@testing-library/jest-dom": "^5.14.1",
@@ -29,12 +29,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -46,13 +40,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-plugin-import": "^2.24.2",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.25.1",
-    "eslint-plugin-react-hooks": "^4.2.0"
   }
 }
