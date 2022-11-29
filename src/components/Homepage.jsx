@@ -1,33 +1,20 @@
 import React, { useState} from 'react'
 import millify from 'millify';
-import {Typography,Row,Col,Statistic} from 'antd';
-import {Link} from 'react-router-dom';
+import { Typography, Row, Col, Statistic } from 'antd';
+import { Link } from 'react-router-dom';
 import { useGetCryptosQuery } from '../services/cryptoApi';
-import {Cryptocurrencies,News} from '../components';
+import { Cryptocurrencies, News } from '../components';
 import Loader from './Loader';
-const {Title} = Typography;
+const { Title } = Typography;
 
 const Homepage = () => {
 
   const { data, isFetching } = useGetCryptosQuery(10);
   const globalStats= data?.data?.stats;
-  const [searchTerm,setSearchTerm] = useState('');
-  // console.log(data);
+
 
   if(isFetching) return <Loader/>;
 
-  // const [globalStats,setglobalStats]=useState([]);
-
-  // function getGlobalStats(){
-  //   getCoin().then((response)=>{
-  //     console.log(response.data?.data?.stats)
-  //     setglobalStats(response.data?.data?.stats)
-  //   })
-  // }
-
-  // useEffect(()=>{
-  //   getGlobalStats();
-  // },[]);
 
 
   return (

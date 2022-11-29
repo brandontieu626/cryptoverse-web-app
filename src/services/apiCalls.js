@@ -1,6 +1,4 @@
-export function getCoin(){
-
-    
+export function getCoin(){ 
   const axios = require("axios");
   
   const options = {
