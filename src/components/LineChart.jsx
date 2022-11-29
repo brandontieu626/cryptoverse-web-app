@@ -1,21 +1,23 @@
 import React from 'react'
 import {Line} from 'react-chartjs-2'
 import {Col, Row, Typography} from 'antd';
-
 const {Title} = Typography;
 
 const LineChart = ({coinHistory,currentPrice,coinName}) => {
-    const coinPrice= coinHistory?.data?.history.map((item)=>item.price);
-    const coinTimestamp=coinHistory?.data?.history.map((item)=> new Date(item.timestamp*1000).toLocaleDateString());
+    const coinPrice = [];
+    const coinTimestamp = [];
+    // const coinPrice= coinHistory?.data?.history.map((item)=>item.price);
+    // const coinTimestamp=coinHistory?.data?.history.map((item)=> new Date(item.timestamp*1000).toLocaleDateString());
     
-    // for (let i = 0; i< coinHistory?.data?.history?.length;i+=1){
-    //     coinPrice.push(coinHistory.data.history[i].price)
-    // }
+    for (let i = 0; i< coinHistory?.data?.history?.length;i+=1){
+        coinPrice.push(coinHistory.data.history[i].price)
+    }
 
-    // for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
-    //     coinTimestamp.push(new Date(coinHistory?.data?.history[i].timestamp*1000).toLocaleDateString());
-    // }
-
+    for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
+        coinTimestamp.push(new Date(coinHistory?.data?.history[i].timestamp* 1000).toLocaleDateString());
+    }
+    // console.log('Coin History Data',coinHistory.data)
+    // console.log('Coin Timestamp:',coinTimestamp)
     const data = {
         labels: coinTimestamp,
         datasets: [
@@ -25,9 +27,9 @@ const LineChart = ({coinHistory,currentPrice,coinName}) => {
                 fill: false,
                 backgroundColor: '#0071bd',
                 borderColor:'#0071bd'
-            }
-        ]
-    }
+            },
+        ],
+    };
 
     const options={
         scales: {
